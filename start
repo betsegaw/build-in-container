@@ -1,0 +1,9 @@
+#!/bin/sh
+
+echo
+echo =====
+echo
+echo 'If there was anything to build, that would be how you would do it!'
+echo
+echo =====
+echo

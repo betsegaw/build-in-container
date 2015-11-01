@@ -1,0 +1,31 @@
+echo
+echo =====
+echo
+echo 'Removing all previous instances of builds'
+echo
+echo =====
+echo
+
+docker stop live-build
+docker rm live-build
+
+echo
+echo =====
+echo
+echo 'Starting up live build container and executing build'
+echo
+echo =====
+echo
+
+docker run --name live-build -v $(pwd):/src -i -t $1 /src/start
+
+echo
+echo =====
+echo
+echo 'Removing instance of current build'
+echo
+echo =====
+echo
+
+docker stop live-build
+docker rm live-build

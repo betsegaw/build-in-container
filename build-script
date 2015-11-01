@@ -1,0 +1,51 @@
+echo
+echo =====
+echo
+echo '1. First, lets remove any previous containers we worked with'
+echo
+echo =====
+echo
+
+docker stop running-build-build
+docker rm running-build-build
+
+echo
+echo =====
+echo
+echo '2. We build an image from the base ubuntu with some special features, such as the current source folder mounted at /src'
+echo
+echo =====
+echo
+
+docker build -t build-build .
+
+echo
+echo =====
+echo
+echo '3. Next, we start up an almost pure ubuntu image that we build in the last step. Install all the software you need and then enter exit'
+echo
+echo =====
+echo
+
+docker run --name running-build-build -v $(pwd):/src -i -t build-build /bin/bash
+
+echo
+echo =====
+echo
+echo '4. Lets save the Image that you just built so that we can use it in the future'
+echo
+echo =====
+echo
+
+docker commit running-build-build $1
+
+echo
+echo =====
+echo
+echo '5. Clean up'
+echo
+echo =====
+echo
+
+docker stop running-build-build
+docker rm running-build-build
