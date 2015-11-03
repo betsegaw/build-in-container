@@ -1,6 +1,6 @@
 # Introduction
 
-Build provides you with a consistent, 'dockerized' method of building your
+Buildoc provides you with a consistent, 'dockerized' method of building your
 projects. Instead of having each one of your contributors figure out how to
 build a project, you can use these scripts to create a dockerized builder that
 will let anyone get started building in no time.
