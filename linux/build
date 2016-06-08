@@ -17,7 +17,7 @@ echo
 echo =====
 echo
 
-docker run --name live-build -v $(pwd):/src -i -t $1 /src/start
+docker run --name live-build -v $2:/src -i -t $1 /src/start
 
 echo
 echo =====
