@@ -27,7 +27,7 @@ echo
 echo =====
 echo
 
-docker run --name running-build-build -v pwd:/src -i -t build-build /bin/bash
+docker run --name running-build-build -v %2:/src -i -t build-build /bin/bash
 
 echo
 echo =====
