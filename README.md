@@ -27,3 +27,8 @@ will let anyone get started building in no time.
 9.  If you push the image `yourname/yourproject-build` to the docker hub, then
     people will be able to clone your repository and the simply run
     `./build yourname/yourproject-build` and it should work like magic
+
+
+NOTE: Windows & OS X users might have to run the following command if your build involves writing a symbolic link
+
+    VBoxManage setextradata VM_NAME VBoxInternal2/SharedFoldersEnableSymlinksCreate/SHARE_NAME 1
